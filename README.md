@@ -14,3 +14,49 @@
 
 ## Quickstart
 
+1. Fork项目:
+
+![](http://118.24.109.65/photo_db/233_Markdown_IMG_tianbot1.png)
+
+2. 将fork的项目克隆到本地：
+
+```shell
+# 注意将@YOUR_NAME换成你的用户名
+git clone https://github.com/@YOUR_NAME/TianBot-Mini-Dev
+```
+
+3. 添加我的远程仓库：
+
+```shell
+git remote add master https://github.com/qiaopengju/TianBot-Mini-Dev
+# 可以通过git remote -v 查看有几个远程仓库，origin是你Fork的，master是刚刚创建的我的仓库
+```
+
+3. **跳转到自己的分支(一定要在自己的分支底下开发修改)**:
+
+```shell
+git checkout mengqiuting	# 秋婷跳转到这个
+git checkout xuhuiqing		# 慧卿跳转到这个
+```
+
+4. 进行开发，add & commit，建议用git桌面版，可以看有哪些修改
+
+* 建议每加一个功能点就commit一下，写清楚做了哪些修改
+
+```shell
+# git add 添加你想加入的文件，建议用GUI
+# git commit -m "你对哪些做了修改，建议经常commit"
+git push -u origin mengqiuting | xuhuiqing # 将修改推到你fork的github仓库分支中，一定不要推送到main
+```
+
+5. pull request
+
+![](http://118.24.109.65/photo_db/233_Markdown_IMG_tianbot2.png)
+
+7. pull request通过后，及时拉取我做的修改:
+
+```shell
+git pull master main
+```
+
+8. 跳转到第4步，继续开发
