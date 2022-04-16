@@ -59,4 +59,4 @@ git push -u origin mengqiuting | xuhuiqing # 将修改推到你fork的github仓�
 git pull master main
 ```
 
-8. 跳转到第4步，继续开发
+8. 跳转到第3步，继续开发
