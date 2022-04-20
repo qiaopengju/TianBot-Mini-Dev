@@ -8,7 +8,7 @@
   * 发送`/tianbot_mini/cmd_vel` topic控制*线速度，角速度*(运行时开启`bringup.launch`)
 * [x] **topic监听**：监听`/tianbot-mini/odom`话题，保存小车实时位置(10')，画出轨迹图(10')
 * [ ] **topic发布&控制第三方包|访问action服务器**：
-  * [ ] 运行`demo_slam.launch`，通过鼠标选取目标点，感受见图和避障过程(5')
+  * [x] 运行`demo_slam.launch`，通过鼠标选取目标点，感受见图和避障过程(5')
   * [ ] 发布`move_base_simple/goal`话题或访问`move_base`的action服务器指定目标点，达到同样效果(15')
   * [ ] 确定几个目标点依次发送，尝试在地上走一个几何图案，运行过程**实时避障**
 
