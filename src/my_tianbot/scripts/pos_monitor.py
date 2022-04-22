@@ -23,6 +23,8 @@ def monitor():
     rospy.Subscriber('tianbot_mini/odom', Odometry, callback)
     # rospy.Subscriber('turtle1/pose', Pose, callback)
 
+    rospy.loginfo("Running ...")
+
     rospy.spin()
 
 if __name__ == '__main__':
