@@ -4,10 +4,10 @@ import rospy
 import numpy as np
 import matplotlib.pyplot as plt
 from nav_msgs.msg import Odometry, Path
-
-from turtlesim.msg import Pose
+# from turtlesim.msg import Pose
 
 x, y = [], []
+plt.ion() # create plot interact window
 
 def callback(data):
     xx = data.pose.pose.position.x
@@ -17,6 +17,10 @@ def callback(data):
 
     x.append(xx)
     y.append(yy)
+
+    plt.clf()
+    plt.plot(x, y)
+    plt.pause(0.001)
 
 def monitor():
     rospy.init_node('pos_monitor', anonymous=True)
@@ -29,5 +33,5 @@ def monitor():
 
 if __name__ == '__main__':
     monitor()
-    plt.plot(x, y)
+    plt.ioff()
     plt.show()
