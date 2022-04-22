@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "vel_ctl");
     ros::NodeHandle n;
-    // ros::Publisher publisher = n.advertise<geometry_msgs::Twist>("turtlesim1/turtle1/cmd_vel", 1000);
+    //ros::Publisher publisher = n.advertise<geometry_msgs::Twist>("turtlesim1/turtle1/cmd_vel", 1000);
     ros::Publisher publisher = n.advertise<geometry_msgs::Twist>("tianbot_mini/cmd_vel", 1000);
     ros::Rate loop_rate(60);
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         char token = getchar(); // get token
         system("stty echo"); // display input
 
-        // 处理键盘输入
+        // // 处理键盘输入
         switch (token)
         {
             case 'i':  vel.linear.x = 0.1; break;
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
             default: break;
         }
         // 圆周运动
-        // vel.linear.x = 0.5;
+        // vel.linear.x = 0.2;
         // vel.angular.z = 1.0;
         publisher.publish(vel);
         loop_rate.sleep();
