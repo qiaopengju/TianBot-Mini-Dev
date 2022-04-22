@@ -14,9 +14,7 @@
   * [x] 发布`move_base_simple/goal`话题或访问`move_base`的action服务器指定目标点，达到同样效果(15')
   * [x] 确定几个目标点依次发送，尝试在地上走一个几何图案，运行过程**实时避障**
   
-  ![](triangle_trace.png)
-  
-  ![](square_trace.png)
+  ![](trace.png)
 
 ## Quickstart
 
