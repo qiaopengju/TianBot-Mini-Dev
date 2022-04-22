@@ -134,7 +134,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/my_tianbot_node.cpp)
-add_executable(vel_ctr src/tianbot_vel_ctl.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,7 +149,6 @@ add_executable(vel_ctr src/tianbot_vel_ctl.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries( vel_ctr ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -162,8 +160,10 @@ target_link_libraries( vel_ctr ${catkin_LIBRARIES})
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  scripts/tianbot_vel_ctl.py
-  scripts/tianbot_pos_monitor.py
+  scripts/vel_ctl.py
+  scripts/pos_monitor.py
+  scripts/goal_action_server.py
+  scripts/multi_goal_as.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -207,3 +207,7 @@ catkin_install_python(PROGRAMS
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(vel_ctl src/tianbot_vel_ctl.cpp)
+target_link_libraries( vel_ctl ${catkin_LIBRARIES})
+add_dependencies(vel_ctl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
