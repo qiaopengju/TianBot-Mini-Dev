@@ -18,6 +18,51 @@
 
 ## Quickstart
 
+1. 启动ROS2GO系统，启动小车，连接TianBot热点；
+
+2. 启动小车底层结点，雷达结点(具体名称记不清了，可以用tab补全)
+
+```shell
+roslaunch tianbot_mini/bringup.launch
+roslaunch tianbot_mini/lidar.launch
+```
+
+3. 启动move_base行为服务器，gmapping建图
+
+```shell
+roslaunch my_tianbot/movebase_slam.launch
+```
+
+4. 运行每个任务：
+
+* task1:
+
+```shell
+rosrun my_tianbot/vel_ctl
+```
+
+* task2:
+
+```
+rosrun my_tianbot/pos_monitor.py
+```
+
+* task3:
+
+```
+rosrun my_tianbot/goal_action_server.py
+```
+
+* task4:
+
+```
+rosrun my_tianbot/multi_goal_as.py
+```
+
+
+
+## Contribute
+
 1. Fork项目:
 
 ![](http://118.24.109.65/photo_db/233_Markdown_IMG_tianbot1.png)
